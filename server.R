@@ -75,97 +75,25 @@ shinyServer(function(input, output, session) {
     
     updateButtonLabels(session, input, "word1")
     disable(id = "word1")
-    # updateButton(session, "l1_w1", label = toupper(str_sub(input$word1, 1, 1)))
-    # updateButton(session, "l2_w1", label = toupper(str_sub(input$word1, 2, 2)))
-    # updateButton(session, "l3_w1", label = toupper(str_sub(input$word1, 3, 3)))
-    # updateButton(session, "l4_w1", label = toupper(str_sub(input$word1, 4, 4)))
-    # updateButton(session, "l5_w1", label = toupper(str_sub(input$word1, 5, 5)))
     
   })
   
   wrong_letters1 <- reactive({
     
     wrongLetterStore(input, input$word1, 1)
-    # wrong_vec <- c()
-    # 
-    # for(i in 1:5) {
-    #   if(input[[paste0("l", i, "_w1")]] %% 3 == 0) {
-    #     wrong_vec <- c(wrong_vec, nextWord1()[[paste0("l", i)]])
-    #   }
-    # }
-    # 
-    # wrong_vec <- paste(wrong_vec, collapse = "|")
+
   })
   
   wrong_pos1 <- reactive({
     
     wrongPositionStore(input, input$word1, 1)
-    # wrong_pos <- c()
-    # 
-    # for(i in 1:5) {
-    #   if(input[[paste0("l", i, "_w1")]] %% 3 == 1) {
-    #     wrong_pos <- c(wrong_pos, nextWord1()[[paste0("l", i)]])
-    #   }
-    #   else {
-    #     wrong_pos <- c(wrong_pos, 1)
-    #   }
-    # }
-    # return(wrong_pos)
     
   })
   
   word_list2 <- reactive({
   
     getWordList(input, input$word1, word_list1(), wrong_pos1(), wrong_letters1(), nextWord1(), 1)
-    
-    # words1 <- word_list1()
-    # 
-    # keep_wrong_pos <- wrong_pos1()[!wrong_pos1() %in% 1]
-    # 
-    # if(length(keep_wrong_pos) > 0) {
-    #   for(i in 1:length(keep_wrong_pos)) {
-    #     
-    #     words1 <- words1 %>%
-    #       filter(grepl(keep_wrong_pos[i], words))
-    #     
-    #   }
-    # }
-    # 
-    # words1 <- words1 %>%
-    #   filter(!grepl(wrong_letters1(), words)) %>%
-    #   # filter(str_contains(words, keep_wrong_pos, logic = "and")) %>%
-    #   filter(!grepl(wrong_pos1()[1], l1),
-    #          !grepl(wrong_pos1()[2], l2),
-    #          !grepl(wrong_pos1()[3], l3),
-    #          !grepl(wrong_pos1()[4], l4),
-    #          !grepl(wrong_pos1()[5], l5)
-    #          )
-    # 
-    # if(input[[paste0("l", 1, "_w1")]] %% 3 == 2) {
-    #   words1 <- words1 %>%
-    #     filter(l1 == nextWord1()$l1)
-    # }
-    # if(input[[paste0("l", 2, "_w1")]] %% 3 == 2) {
-    #   words1 <- words1 %>%
-    #     filter(l2 == nextWord1()$l2)
-    # }
-    # if(input[[paste0("l", 3, "_w1")]] %% 3 == 2) {
-    #   words1 <- words1 %>%
-    #     filter(l3 == nextWord1()$l3)
-    # }
-    # if(input[[paste0("l", 4, "_w1")]] %% 3 == 2) {
-    #   words1 <- words1 %>%
-    #     filter(l4 == nextWord1()$l4)
-    # }
-    # if(input[[paste0("l", 5, "_w1")]] %% 3 == 2) {
-    #   words1 <- words1 %>%
-    #     filter(l5 == nextWord1()$l5)
-    # }
-    # 
-    # return(words1)
-    
-    
-    
+  
   })
   
   # ----------------------- #
