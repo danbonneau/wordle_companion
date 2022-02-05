@@ -8,8 +8,6 @@ library(shinyBS)
 library(sjmisc)
 library(shinyjs)
 library(shinythemes)
-source("modules/uiModule.R")
-source("modules/serverModule.R")
 source("functions/input_functions.R")
 
 header <- dashboardHeader(title = "Wordle Solver")
