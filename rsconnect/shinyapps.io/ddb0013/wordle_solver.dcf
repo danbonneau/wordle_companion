@@ -1,0 +1,10 @@
+name: wordle_solver
+title:
+username:
+account: ddb0013
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 5517765
+bundleId: 5516094
+url: https://ddb0013.shinyapps.io/wordle_solver/
+when: 1643319107.49367
